@@ -68,7 +68,7 @@ func run(outFile string, autoHelp bool) error {
 		return fmt.Errorf("file name must end with .go")
 	}
 	fset := token.NewFileSet()
-	m, err := parser.ParseDir(fset, ".", nil, parser.ParseComments)
+	m, err := parser.ParseDir(fset, ".", nil, parser.ParseComments|parser.PackageClauseOnly)
 	if err != nil {
 		return err
 	}
