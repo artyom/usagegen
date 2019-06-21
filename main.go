@@ -51,7 +51,7 @@ import (
 func main() {
 	outFile := defaultOutFile
 	var auto bool
-	flag.StringVar(&outFile, "f", outFile, "generated file name")
+	flag.StringVar(&outFile, "f", outFile, "generated `file` name")
 	flag.BoolVar(&auto, "autohelp", false, "automatically define flag.Usage")
 	flag.Parse()
 	if err := run(outFile, auto); err != nil {
